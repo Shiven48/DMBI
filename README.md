@@ -1,0 +1,1 @@
+https://chatgpt.com/share/68021936-1e48-800e-955a-9bc972f7dcb2 - 5 to 18
