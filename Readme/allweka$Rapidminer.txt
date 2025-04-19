@@ -1,0 +1,282 @@
+EXP 5
+@ Implement Decision Tree in WEKA
+
+	- Weka > Explorer
+	- Preprocess "open csv or arff file"
+	- Classify Tab > Classifier Choose  > weka > Classifiers > trees > J48
+	- start
+	- Right click Result list >  Visualize tree
+
+EXP 6
+@ To implement a Bayesian classifier without using library functions in WEKA
+
+	- Weka > Explorer
+	- Preprocess "open csv or arff file"
+	- Classify Tab > Classifier Choose  > weka > Classifiers > bayes > NaiveBayes
+	- start
+	- Result in classifier output
+
+
+EXP 7
+@ To implement a Bayesian classifier without using library functions in WEKA
+
+	- Weka > Explorer
+	- Preprocess "open csv or arff file"
+	- Classify Tab > Classifier Choose  > weka > Classifiers > bayes > BayesNet
+	- start
+	- Result in classifier output
+
+EXP 8
+@ To implement SVM  in WEKA
+
+	- Weka > Explorer
+	- Preprocess "open csv or arff file"
+	- Classify Tab > Classifier Choose  > weka > Classifiers > funtions > SMO
+	- start
+	- Result in classifier output
+
+EXP 9
+@ To implement Adaboost in WEKA
+	
+	- Weka > Explorer
+	- Preprocess "open csv or arff file"
+	- Classify Tab > Classifier Choose  > weka > Classifiers > meta > AdaboostM1
+	- start
+	- Result in classifier output
+
+EXP 10
+@ To implement Random Forests in WEKA
+	
+	- Weka > Explorer
+	- Preprocess "open csv or arff file"
+	- Classify Tab > Classifier Choose  > weka > Classifiers > tress > RandomForest
+	- start
+	- Result in classifier output
+
+
+EXP 11
+@ To implement the Back-propagation algorithm  in WEKA
+	
+	- Weka > Explorer
+	- Preprocess "open csv or arff file"
+	- Classify Tab > Classifier Choose  > weka > Classifiers > functions > MultilayerPerceptron
+	- start
+	- Result in classifier output
+EXP 12
+@ To implement K-means clustering  in WEKA
+	
+	- Weka > Explorer
+	- Preprocess "open csv or arff file"
+	- Cluster Tab > Clusterer Choose  > weka > Clusterer > SimpleKMeans
+	- start
+	- Result in Cluster output
+
+
+ @ Implement Apriori in WEKA
+Weka > Explorer
+
+Preprocess Tab
+
+Open your dataset (.arff or .csv)
+
+⚠️ Ensure the data is in transactional format (nominal attributes only – e.g., market basket format).
+
+Associate Tab
+
+Click "Choose" > weka.associations.Apriori
+
+Click Start
+
+View generated association rules in the result window.
+
+
+@ Implement FP-Growth in WEKA
+Weka > Explorer
+
+Preprocess Tab
+
+Open your dataset (.arff or .csv)
+
+Data must be in transactional format (nominal values only).
+
+Associate Tab
+
+Click "Choose" > weka.associations.FPGrowth
+
+Click Start
+
+View frequent patterns and rules in the result window.
+
+
+ @ Implement DBSCAN in WEKA
+Weka > Explorer
+
+Preprocess Tab
+
+Open your dataset (.arff or .csv)
+
+Works best with numerical features.
+
+Cluster Tab
+
+Click "Choose" > weka.clusterers.DBSCAN
+
+Set parameters (e.g., epsilon, minPoints) as needed.
+
+Click Start
+
+View cluster assignments in the result output.
+
+
+marker basket dataset for apriori/fpgrowth (.arff)
+
+@relation market_basket
+
+@attribute milk {yes, no}
+@attribute bread {yes, no}
+@attribute butter {yes, no}
+@attribute eggs {yes, no}
+@attribute cheese {yes, no}
+
+@data
+yes,yes,yes,no,no
+yes,yes,no,no,no
+yes,no,no,no,yes
+no,yes,yes,yes,no
+yes,yes,yes,yes,no
+no,no,yes,no,yes
+
+
+dataset for dbscan : 
+
+@relation dbscan_sample
+
+@attribute x numeric
+@attribute y numeric
+
+@data
+1.0,2.0
+1.1,2.1
+0.9,1.9
+5.0,8.0
+5.1,8.1
+4.9,7.9
+10.0,10.0
+10.1,10.2
+
+
+
+
+ @ Convert CSV to ARFF in WEKA
+✅ Option 1: Use WEKA Explorer
+Weka > Explorer
+
+Go to the Preprocess Tab
+
+Click Open file > Select your .csv file
+(WEKA will automatically parse it)
+
+Once loaded, click:
+
+Save > Change the file type to .arff
+
+Save it as your_file.arff
+
+
+⚠️ CSV Format Tips for WEKA
+Avoid missing headers
+
+All nominal (categorical) values must be consistent and in lowercase or uppercase
+
+Missing values should be left blank or use ?
+
+No special characters or spaces in column names
+
+
+
+✅ @ Implement BIRCH in RapidMiner (AIStudio)
+🛠️ Requirements:
+Use "Clustering > BIRCH" operator
+(If not visible, go to Extensions > Marketplace and install “Subspace Clustering Extension” or “Clustering Extension”)
+
+👣 Steps:
+Open RapidMiner Studio / AIStudio
+
+Click "Create New Process"
+
+In the Operators panel:
+
+Search for Retrieve → drag it into the canvas
+
+Load your dataset (.csv or RapidMiner’s sample data)
+
+Search for BIRCH → drag the BIRCH operator into canvas
+
+Connect:
+
+Retrieve.output → BIRCH.example set
+
+BIRCH.cluster model → Result 1
+
+BIRCH.clustered set → Result 2
+
+Run the process ▶️
+
+View:
+
+Clustered data table
+
+Cluster labels
+
+Performance if added
+
+⚙️ Optional:
+You can use Performance (Clustering) operator to evaluate Silhouette, Dunn Index, etc.
+
+✅ @ Implement CLIQUE in RapidMiner (AIStudio)
+🛠️ Requirements:
+Requires Subspace Clustering Extension
+
+Go to: Extensions > Marketplace
+
+Search for: Subspace Clustering
+
+Install and restart RapidMiner
+
+👣 Steps:
+Create New Process
+
+From Operators panel:
+
+Add Retrieve (for dataset)
+
+Add CLIQUE (from Subspace Clustering section)
+
+Connect:
+
+Retrieve.output → CLIQUE.example set
+
+CLIQUE.cluster model → Result 1
+
+CLIQUE.subspace clustered set → Result 2
+
+Run the process ▶️
+
+⚙️ Notes:
+CLIQUE finds clusters in subspaces—useful for high-dimensional data.
+
+You can add Select Attributes or Normalize operator before CLIQUE for better results.
+
+🧪 Optional: Visualize Clusters
+Use Scatter Plot or Centroid Table
+
+Add Color by = cluster to highlight grouping
+
+📁 Sample Datasets to Try
+Use Iris, Golf, or Sonar datasets from RapidMiner’s Samples
+
+For CLIQUE, try datasets with more attributes (≥ 4) to see subspace clustering in action
+
+
+
+
